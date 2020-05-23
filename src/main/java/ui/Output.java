@@ -11,6 +11,7 @@ public class Output {
     private static final String ROW = "-";
     private static final String COLUMN = "|";
     private static final String LINE_BREAK = "\n";
+    private static final String COLON = " : ";
 
     public static void printMessage(String message) {
         System.out.println(message);
@@ -23,6 +24,20 @@ public class Output {
         printMessage(getPrintedString(names));
         printMessage(getPrintedLadder(ladder));
         printMessage(getPrintedString(results));
+    }
+
+    public static void printResultItems(List<String> names, List<String> resultItems) {
+        StringBuilder printedResult = new StringBuilder();
+        for (int i = 0; i < names.size(); i++) {
+            String name = names.get(i);
+            String item = resultItems.get(i);
+
+            printedResult.append(name)
+                    .append(COLON)
+                    .append(item)
+                    .append(LINE_BREAK);
+        }
+        printMessage(printedResult.toString());
     }
 
     private static String getPrintedString(List<String> strings) {
