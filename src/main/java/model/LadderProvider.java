@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LadderProvider {
-    public List<Line> getLadder(int ladderHeight, int nameCount) {
+    public static List<Line> getLadder(int ladderHeight, int nameCount) {
         List<Line> ladder = new ArrayList<>();
 
         int pointCount = nameCount - 1;
@@ -14,7 +14,7 @@ public class LadderProvider {
         return ladder;
     }
 
-    private Line makeLine(int pointCount) {
+    private static Line makeLine(int pointCount) {
         List<Boolean> points = Random.getRandomPoints(pointCount);
         return new Line(points);
     }
