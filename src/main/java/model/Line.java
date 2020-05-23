@@ -1,6 +1,5 @@
 package model;
 
-import java.util.Collections;
 import java.util.List;
 
 public class Line {
@@ -10,7 +9,15 @@ public class Line {
         this.points = points;
     }
 
-    public List<Boolean> getPoints() {
-        return Collections.unmodifiableList(points);
+    public boolean connected(int index) {
+        return points.get(index);
+    }
+
+    public boolean isLastLocation(int location) {
+        return points.size() == location;
+    }
+
+    public int getPointCount() {
+        return points.size();
     }
 }

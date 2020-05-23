@@ -46,12 +46,13 @@ public class Output {
     }
 
     private static String getPrintedLine(Line line) {
-        List<Boolean> points = line.getPoints();
+        int pointCount = line.getPointCount();
         StringBuilder printedLine = new StringBuilder();
 
-        for (Boolean point : points) {
+        for (int i = 0; i < pointCount; i++) {
+            boolean connected = line.connected(i);
             printedLine.append(COLUMN);
-            printedLine.append(getPrintedPoint(point));
+            printedLine.append(getPrintedPoint(connected));
         }
         printedLine.append(COLUMN);
         return printedLine.toString();

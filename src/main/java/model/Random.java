@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Random {
@@ -11,7 +12,7 @@ public class Random {
         for (int i = 1; i < pointsCount; i++) {
             addRandomPoint(points, i);
         }
-        return points;
+        return Collections.unmodifiableList(points);
     }
 
     private static boolean randomBoolean() {

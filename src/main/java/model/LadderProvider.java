@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class LadderProvider {
@@ -11,7 +12,7 @@ public class LadderProvider {
         for (int i = 0; i < ladderHeight; i++) {
             ladder.add(makeLine(pointCount));
         }
-        return ladder;
+        return Collections.unmodifiableList(ladder);
     }
 
     private static Line makeLine(int pointCount) {
