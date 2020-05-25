@@ -27,11 +27,14 @@ public class Output {
     }
 
     public static void printResultItems(List<String> names, List<String> resultItems) {
+        if (resultItems.size() == 1) {
+            printMessage(resultItems.get(0));
+            return;
+        }
         StringBuilder printedResult = new StringBuilder();
         for (int i = 0; i < names.size(); i++) {
             String name = names.get(i);
             String item = resultItems.get(i);
-
             printedResult.append(name)
                     .append(COLON)
                     .append(item)

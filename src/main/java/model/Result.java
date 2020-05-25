@@ -4,16 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Result {
-    public static List<String> getAllResultItems(List<String> names, List<String> items, List<Integer> orders) {
+    public static List<String> getMatchItems(List<String> items, List<Integer> matchNumbers) {
         List<String> results = new ArrayList<>();
-        for (int i = 0; i < names.size(); i++) {
-            int order = orders.get(i);
-            results.add(getResultItem(items, order));
+        for (int matchNumber : matchNumbers) {
+            String item = items.get(matchNumber);
+            results.add(item);
         }
         return results;
-    }
-
-    public static String getResultItem(List<String> items, int order) {
-        return items.get(order);
     }
 }

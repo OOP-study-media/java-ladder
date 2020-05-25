@@ -31,10 +31,9 @@ public class Input {
         return inputListSplitWithComma();
     }
 
-    public static int inputLadderHeight() throws Exception {
+    public static String inputLadderHeight() throws Exception {
         Output.printMessage(INPUT_LADDER_HEIGHT_MESSAGE);
-        String input = br.readLine();
-        return Integer.parseInt(input);
+        return br.readLine();
     }
 
     public static String inputGetResultName() throws Exception {

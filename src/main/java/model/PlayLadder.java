@@ -5,16 +5,15 @@ import java.util.Collections;
 import java.util.List;
 
 public class PlayLadder {
-    public static List<Integer> getAllLadderNumber(List<Line> ladder, int nameCount) {
+    public static List<Integer> getMatchNumbers(List<Line> ladder, List<Integer> nameNumbers) {
         List<Integer> ladderNumbers = new ArrayList<>();
-
-        for (int i = 0; i < nameCount; i++) {
-            ladderNumbers.add(getLadderNumber(ladder, i));
+        for (int nameNumber : nameNumbers) {
+            ladderNumbers.add(getMatchNumber(ladder, nameNumber));
         }
         return Collections.unmodifiableList(ladderNumbers);
     }
 
-    public static int getLadderNumber(List<Line> ladder, int start) {
+    public static int getMatchNumber(List<Line> ladder, int start) {
         int location = start;
         for (Line line : ladder) {
             location = move(line, location);

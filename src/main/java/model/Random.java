@@ -21,7 +21,6 @@ public class Random {
 
     private static void addRandomPoint(List<Boolean> points, int currentPoint) {
         boolean checkPreviousPoint = points.get(currentPoint - 1);
-
         if (checkPreviousPoint) {
             points.add(false);
             return;
