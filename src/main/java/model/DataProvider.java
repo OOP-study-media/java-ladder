@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DataProvider {
@@ -10,9 +11,7 @@ public class DataProvider {
         if (name.equals(ALL)) {
             return new ArrayList<>(names);
         }
-        List<String> resultNames = new ArrayList<>();
-        resultNames.add(name);
-        return resultNames;
+        return List.of(name);
     }
 
     public static List<Integer> getResultNameNumbers(List<String> names, List<String> resultNames) {
@@ -21,7 +20,7 @@ public class DataProvider {
             int nameNumber = names.indexOf(name);
             nameNumbers.add(nameNumber);
         }
-        return nameNumbers;
+        return Collections.unmodifiableList(nameNumbers);
     }
 
     public static List<Integer> getMatchNumbers(List<Line> ladder, List<Integer> nameNumbers) {

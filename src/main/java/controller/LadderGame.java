@@ -14,7 +14,7 @@ public class LadderGame {
         List<String> items = InputSetting.setupItems(names.size());
         int ladderHeight = InputSetting.setupHeight();
 
-        List<Line> ladder = LadderProvider.getLadder(ladderHeight, names.size());
+        List<Line> ladder = LadderProvider.getLadder(ladderHeight, names.size(), Random::getRandomPoints);
         Output.printLadder(ladder, names, items);
 
         String resultName = InputSetting.setupResultName(names);

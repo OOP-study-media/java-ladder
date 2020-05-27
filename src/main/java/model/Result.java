@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Result {
@@ -10,6 +11,6 @@ public class Result {
             String item = items.get(matchNumber);
             results.add(item);
         }
-        return results;
+        return Collections.unmodifiableList(results);
     }
 }

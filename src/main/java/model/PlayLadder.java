@@ -8,12 +8,13 @@ public class PlayLadder {
     public static List<Integer> getMatchNumbers(List<Line> ladder, List<Integer> nameNumbers) {
         List<Integer> ladderNumbers = new ArrayList<>();
         for (int nameNumber : nameNumbers) {
-            ladderNumbers.add(getMatchNumber(ladder, nameNumber));
+            int matchNumber = getMatchNumber(ladder, nameNumber);
+            ladderNumbers.add(matchNumber);
         }
         return Collections.unmodifiableList(ladderNumbers);
     }
 
-    public static int getMatchNumber(List<Line> ladder, int start) {
+    private static int getMatchNumber(List<Line> ladder, int start) {
         int location = start;
         for (Line line : ladder) {
             location = move(line, location);

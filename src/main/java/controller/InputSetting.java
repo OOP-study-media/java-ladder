@@ -5,6 +5,8 @@ import ui.Input;
 import java.util.List;
 
 public class InputSetting {
+    private static final String ALL = "all";
+
     public static List<String> setupNames() throws Exception {
         List<String> names = Input.inputNames();
         InputValidator.checkInputNames(names);
@@ -26,7 +28,9 @@ public class InputSetting {
 
     public static String setupResultName(List<String> names) throws Exception {
         String resultName = Input.inputGetResultName();
-        InputValidator.checkResultName(names, resultName);
+        if (!resultName.equals(ALL)) {
+            InputValidator.checkResultName(names, resultName);
+        }
         return resultName;
     }
 }
